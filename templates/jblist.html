@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Jobs{% endblock title %}
+{% block content %}
+{% for post in jobs_list %}
+<div class="container">
+  <div class="card bg-#eee text-white">
+  <div class="card-body">
+    <h2 ><a  href="{% url 'jbdetail' post.pk%}" style="color:black;">{{post.JobTitle}}class="text-body"</a></h2>
+  <p> <span>{{post.DateAdded}}</span> </p>
+
+     </div>
+     </div>
+  <br>
+</div>
+{% endfor %}
+{% endblock content %}

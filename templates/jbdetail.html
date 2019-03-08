@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title%}Detail View{% endblock title %}
+{% block content %}
+<div class="container"><span><h1>&nbsp;</h1></span></div>
+<div class="container" >
+  <div class="card bg-#eee text-white">
+  <div class="card-body">
+<h1 class="text-body">{{jobsmodel.JobTitle }}</h1>
+      <p class="text-muted"> Company : {{jobsmodel.Company}} </p>
+<p class="text-muted"><span>{{ jobsmodel.DateAdded }}</span></p>
+<p class="text-muted">{{  jobsmodel.Requirements}}</p>
+
+<p class="text-muted"> Experiecne : {{jobsmodel.Experiecne}} </p>
+      <p class="text-muted"> Salary : {{jobsmodel.Salary}} </p>
+      <p class="text-muted"> Description : {{jobsmodel.Description}}</p>
+       <p class="text-muted"> HrMail : {{jobsmodel.HrMail}} </p>
+     </div>
+     </div>
+  <br>
+</div>
+
+{% endblock content %}

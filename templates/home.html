@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Home{% endblock title %}
+{% block content %}
+&nbsp;
+<div class="container"></div>
+ <div class="card bg-#eee text-white">
+  <div class="card-body" ">
+{% if user.is_authenticated %}
+    <div class="alert alert-dark" style="height: 50px;>
+      <h1 class="text-body" style=""><strong>User Details</strong></h1></div>
+<div class="container">
+    <p class="text-muted"> Hi {{user.username }}</p>
+
+  {% if user.is_superuser %}
+
+    <p class="text-muted">You can post Jobs Super User.</p>
+  {% endif %}
+
+
+  <p><a href="{% url 'logout' %}" class="btn btn-info" role="button">Log Out</a></p>
+    {% if user.is_superuser %}
+
+    <div class="row">
+    <div class="col-sm-10" >
+        <p><a href="{% url 'jobcreate' %}" class="btn btn-info" role="button">Post Job</a></p>
+    </div>
+
+  </div>
+
+     {% endif %}
+</div>
+    </div>
+     </div>
+  <br>
+</div>
+  {% for post in jobs_list %}
+<div class="container">
+  <div class="card bg-#eee text-white">
+  <div class="card-body">
+    <h2><a href="{% url 'jbdetail' post.pk%}" >{{post.JobTitle}}</a></h2>
+    <p class="text-muted" > <span>{{post.DateAdded}}</span> </p>
+  </div>
+     </div>
+  <br>
+</div>
+  {% endfor %}
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+{% endblock content %}
