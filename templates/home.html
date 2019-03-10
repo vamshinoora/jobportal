@@ -6,10 +6,19 @@
 &nbsp;
 <div class="container"></div>
  <div class="card bg-#eee text-white">
-  <div class="card-body" ">
+  <div class="card-body">
 {% if user.is_authenticated %}
+       {% if user.is_superuser %}
+<div class="alert alert-dark" style="height: 50px;>
+      <h1 class="text-body"><strong>Admin Page</strong></h1>
+  </div>
+
+{% else %}
     <div class="alert alert-dark" style="height: 50px;>
-      <h1 class="text-body" style=""><strong>User Details</strong></h1></div>
+      <h1 class="text-body"><strong>User Details</strong></h1>
+  </div>
+
+  {% endif %}
 <div class="container">
     <p class="text-muted"> Hi {{user.username }}</p>
 
