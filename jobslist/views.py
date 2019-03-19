@@ -28,7 +28,7 @@ class JobsCreateView(LoginRequiredMixin, CreateView):
 
         if not self.request.user.is_superuser:
             print(self.request.user.is_superuser)
-            raise PermissionDenied
+            raise PermissionDenied 
 
         return super().dispatch(request, *args, **kwargs)
 

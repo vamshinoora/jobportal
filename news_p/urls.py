@@ -24,5 +24,8 @@ urlpatterns = [
     # path('users/', include('testoo.urls')),
     path('users/', include('django.contrib.auth.urls')),
     # path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('', include('jobslist.urls'))
+    path('', include('jobslist.urls')),
+path('applyjob/', include('applyjob.urls')),
+
+    
 ]

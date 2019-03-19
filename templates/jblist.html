@@ -6,7 +6,7 @@
 <div class="container">
   <div class="card bg-#eee text-white">
   <div class="card-body">
-    <h2 ><a  href="{% url 'jbdetail' post.pk%}" style="color:black;">{{post.JobTitle}}class="text-body"</a></h2>
+    <h2 ><a  href="{% url 'jbdetail' post.pk%}" style="color:black;">{{ post.JobTitle|title }}</a></h2>
   <p> <span>{{post.DateAdded}}</span> </p>
 
      </div>
